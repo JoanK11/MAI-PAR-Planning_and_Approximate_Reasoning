@@ -25,6 +25,8 @@
     ;; Tool Status & Locations
     (tool-clean ?t - Tool) ; Tool ?t is clean
     (initial-tool-loc ?t - Tool ?l - Location) ; Initial location of tool ?t is ?l
+    (tool-discarded ?t - Tool) ; Tool ?t has been discarded
+    (tool-used-by ?t - Tool ?d - Dish) ; Tool ?t has been used by dish ?d
 
     ;; Order Status
     (processing-order ?d - Dish) ; Order for dish ?d is being processed
@@ -71,25 +73,25 @@
 (:action clean-tool
     :parameters (?r - Robot ?t - Tool ?l - DWA)
     :precondition (and (robot-at ?r ?l) (item-at ?t ?l))
-    :effect (tool-clean ?t)
+    :effect (and (tool-clean ?t) (forall (?d - Dish) (not (tool-used-by ?t ?d))))
 )
 
 (:action cut-ingredient
-    :parameters (?r - Robot ?i - Ingredient ?t - Cutter ?l - CTA)
-    :precondition (and (robot-at ?r ?l) (holding ?r ?t) (item-at ?i ?l) (needs-cutting ?i) (> (tool-durability ?t) 0))
-    :effect (and (ingredient-cut ?i) (not (needs-cutting ?i)) (not (tool-clean ?t)) (decrease (tool-durability ?t) 1))
+    :parameters (?r - Robot ?i - Ingredient ?t - Cutter ?d - Dish ?l - CTA)
+    :precondition (and (robot-at ?r ?l) (holding ?r ?t) (item-at ?i ?l) (needs-cutting ?i) (> (tool-durability ?t) 0) (ingredient-in-dish ?d ?i) (or (tool-clean ?t) (tool-used-by ?t ?d)))
+    :effect (and (ingredient-cut ?i) (not (needs-cutting ?i)) (not (tool-clean ?t)) (tool-used-by ?t ?d) (decrease (tool-durability ?t) 1))
 )
 
 (:action mix-ingredient
-    :parameters (?r - Robot ?i - Ingredient ?t - Mixer ?l - MIXA)
-    :precondition (and (robot-at ?r ?l) (holding ?r ?t) (item-at ?i ?l) (needs-mixing ?i))
-    :effect (and (ingredient-mixed ?i) (not (needs-mixing ?i)) (not (tool-clean ?t)) (decrease (tool-durability ?t) 1))
+    :parameters (?r - Robot ?i - Ingredient ?t - Mixer ?d - Dish ?l - MIXA)
+    :precondition (and (robot-at ?r ?l) (holding ?r ?t) (item-at ?i ?l) (needs-mixing ?i) (> (tool-durability ?t) 0) (ingredient-in-dish ?d ?i) (or (tool-clean ?t) (tool-used-by ?t ?d)))
+    :effect (and (ingredient-mixed ?i) (not (needs-mixing ?i)) (not (tool-clean ?t)) (tool-used-by ?t ?d) (decrease (tool-durability ?t) 1))
 )
 
 (:action cook-ingredient
-    :parameters (?r - Robot ?i - Ingredient ?t - Cooker ?l - CA)
-    :precondition (and (robot-at ?r ?l) (not (holding-any ?r)) (item-at ?i ?l) (item-at ?t ?l) (needs-cooking ?i))
-    :effect (and (ingredient-cooked ?i) (not (needs-cooking ?i)) (not (tool-clean ?t)) (decrease (tool-durability ?t) 1))
+    :parameters (?r - Robot ?i - Ingredient ?t - Cooker ?d - Dish ?l - CA)
+    :precondition (and (robot-at ?r ?l) (not (holding-any ?r)) (item-at ?i ?l) (item-at ?t ?l) (needs-cooking ?i) (> (tool-durability ?t) 0) (ingredient-in-dish ?d ?i) (or (tool-clean ?t) (tool-used-by ?t ?d)))
+    :effect (and (ingredient-cooked ?i) (not (needs-cooking ?i)) (not (tool-clean ?t)) (tool-used-by ?t ?d) (decrease (tool-durability ?t) 1))
 )
 
 (:action check-prepared
@@ -137,13 +139,21 @@
     :parameters (?d - Dish)
     :precondition (and (processing-order ?d) (dish-served ?d)
         (forall (?t - Tool)
-            (and (tool-clean ?t)
-                (exists (?l - Location)
-                    (and (initial-tool-loc ?t ?l) (item-at ?t ?l))
+            (or (tool-discarded ?t)
+                (and (tool-clean ?t)
+                    (exists (?l - Location)
+                        (and (initial-tool-loc ?t ?l) (item-at ?t ?l))
+                    )
                 )
             )
         )
     )
     :effect (and (not (processing-order ?d)) (order-processed ?d))
+)
+
+(:action throw-tool
+    :parameters (?r - Robot ?t - Tool)
+    :precondition (and (holding ?r ?t) (= (tool-durability ?t) 0))
+    :effect (and (not (holding ?r ?t)) (not (holding-any ?r)) (tool-discarded ?t))
 )
 )

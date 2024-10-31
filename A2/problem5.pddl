@@ -1,6 +1,6 @@
 (define (problem problem5) (:domain robot-chef-plus)
 (:objects 
-    r1 r2 - Robot
+    r1 r2 r3 - Robot
     sushi ramen curry_rice - Dish
     fish seaweed rice1 rice2 chicken curry noodles broth vegetables meat milk eggs - Ingredient
     knife1 knife2 knife3 - Cutter
@@ -17,7 +17,7 @@
 )
 
 (:init
-    (robot-at r1 ca) (robot-at r2 pa)
+    (robot-at r1 ca) (robot-at r2 pa) (robot-at r3 sa)
 
     (adjacent ca sva) (adjacent sva ca) (adjacent ca dwa) (adjacent dwa ca)
     (adjacent ca pa) (adjacent pa ca) (adjacent pa dwa) (adjacent dwa pa)
