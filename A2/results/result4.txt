@@ -1,0 +1,233 @@
+ff: parsing domain file
+domain 'ROBOT-CHEF-PLUS' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEM4' defined
+ ... done.
+
+
+no metric specified. plan length assumed.
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is EHC, if that fails then  best-first on 1*g(s) + 5*h(s) where
+	metric is  plan length
+
+Cueing down from goal distance:   55 into depth [1]
+                              	50        	[1]
+                              	49        	[1]
+                              	48        	[1][2][3]
+                              	47        	[1][2][3][4]
+                              	46        	[1][2][3][4]
+                              	45        	[1][2][3]
+                              	44        	[1][2][3][4]
+                              	43        	[1][2][3][4][5][6][7]
+                              	42        	[1][2][3]
+                              	41        	[1][2][3]
+                              	40        	[1][2][3][4][5][6][7][8][9]
+                              	39        	[1]
+                              	38        	[1][2]
+                              	37        	[1][2][3][4][5][6][7][8][9]
+                              	36        	[1][2][3][4][5][6][7][8]
+                              	35        	[1][2][3][4][5][6]
+                              	34        	[1][2][3]
+                              	33        	[1][2][3][4][5][6][7][8][9]
+                              	32        	[1][2]
+                              	31        	[1][2]
+                              	30        	[1]
+                              	29        	[1][2][3][4][5][6][7][8][9]
+                              	28        	[1][2][3][4][5][6][7][8][9]
+                              	27        	[1]
+                              	26        	[1]
+                              	25        	[1]
+                              	24        	[1]
+                              	23        	[1]
+                              	22        	[1][2][3][4][5][6][7][8][9][10]
+                              	21        	[1][2][3][4]
+                              	20        	[1]
+                              	19        	[1][2]
+                              	18        	[1]
+                              	17        	[1][2][3][4]
+                              	16        	[1]
+                              	15        	[1][2]
+                              	14        	[1]
+                              	13        	[1]
+                              	12        	[1][2][3]
+                              	11        	[1]
+                              	10        	[1][2][3][4]
+                               	9        	[1]
+                               	8        	[1]
+                               	7        	[1]
+                               	6        	[1][2][3][4]
+                               	5        	[1]
+                               	4        	[1]
+                               	3        	[1]
+                               	2        	[1]
+                               	1        	[1]
+                               	0       	 
+
+ff: found legal plan as follows
+
+step	0: MOVE R2 SA CTA
+    	1: START-ORDER RAMEN
+    	2: START-ORDER SUSHI
+    	3: MOVE R2 CTA SA
+    	4: PICK-UP-ITEM R2 VEGETABLES SA
+    	5: MOVE R2 SA CTA
+    	6: DROP-ITEM R2 VEGETABLES CTA
+    	7: MOVE R2 CTA SA
+    	8: PICK-UP-ITEM R2 FISH SA
+    	9: MOVE R2 SA CTA
+   	10: DROP-ITEM R2 FISH CTA
+   	11: MOVE R2 CTA SA
+   	12: PICK-UP-ITEM R2 SEAWEED SA
+   	13: MOVE R2 SA CTA
+   	14: DROP-ITEM R2 SEAWEED CTA
+   	15: MOVE R1 CA PA
+   	16: MOVE R1 PA MIXA
+   	17: PICK-UP-ITEM R2 KNIFE2 CTA
+   	18: MOVE R1 MIXA SA
+   	19: PICK-UP-ITEM R1 RICE SA
+   	20: MOVE R1 SA MIXA
+   	21: DROP-ITEM R1 RICE MIXA
+   	22: MOVE R1 MIXA SA
+   	23: PICK-UP-ITEM R1 NOODLES SA
+   	24: MOVE R1 SA MIXA
+   	25: MOVE R1 MIXA PA
+   	26: DROP-ITEM R1 NOODLES PA
+   	27: MOVE R1 PA MIXA
+   	28: MOVE R1 MIXA SA
+   	29: PICK-UP-ITEM R1 BROTH SA
+   	30: MOVE R1 SA MIXA
+   	31: MOVE R1 MIXA PA
+   	32: DROP-ITEM R1 BROTH PA
+   	33: MOVE R1 PA MIXA
+   	34: PICK-UP-ITEM R1 GLOVES MIXA
+   	35: MIX-INGREDIENT R1 RICE GLOVES MIXA
+   	36: MOVE R1 MIXA PA
+   	37: MOVE R1 PA DWA
+   	38: DROP-ITEM R1 GLOVES DWA
+   	39: CLEAN-TOOL R1 GLOVES DWA
+   	40: PICK-UP-ITEM R1 GLOVES DWA
+   	41: MOVE R1 DWA PA
+   	42: MOVE R1 PA MIXA
+   	43: DROP-ITEM R1 GLOVES MIXA
+   	44: PICK-UP-ITEM R1 RICE MIXA
+   	45: MOVE R1 MIXA PA
+   	46: CUT-INGREDIENT R2 FISH KNIFE2 CTA
+   	47: DROP-ITEM R2 KNIFE2 CTA
+   	48: PICK-UP-ITEM R2 FISH CTA
+   	49: MOVE R2 CTA MIXA
+   	50: MOVE R2 MIXA PA
+   	51: DROP-ITEM R1 RICE PA
+   	52: MOVE R1 PA DWA
+   	53: CHECK-PREPARED FISH SUSHI
+   	54: DROP-ITEM R2 FISH PA
+   	55: MOVE R2 PA MIXA
+   	56: MOVE R2 MIXA CTA
+   	57: PICK-UP-ITEM R2 KNIFE2 CTA
+   	58: CUT-INGREDIENT R2 VEGETABLES KNIFE2 CTA
+   	59: DROP-ITEM R2 KNIFE2 CTA
+   	60: MOVE R2 CTA MIXA
+   	61: CHECK-PREPARED VEGETABLES RAMEN
+   	62: MOVE R2 MIXA CTA
+   	63: PICK-UP-ITEM R2 VEGETABLES CTA
+   	64: MOVE R2 CTA MIXA
+   	65: MOVE R2 MIXA PA
+   	66: MOVE R1 DWA CA
+   	67: DROP-ITEM R2 VEGETABLES PA
+   	68: MOVE R2 PA CA
+   	69: MOVE R1 CA DWA
+   	70: MOVE R1 DWA PA
+   	71: MOVE R1 PA MIXA
+   	72: MOVE R1 MIXA CTA
+   	73: PICK-UP-ITEM R1 KNIFE2 CTA
+   	74: MOVE R1 CTA MIXA
+   	75: MOVE R1 MIXA PA
+   	76: MOVE R1 PA DWA
+   	77: DROP-ITEM R1 KNIFE2 DWA
+   	78: CLEAN-TOOL R1 KNIFE2 DWA
+   	79: PICK-UP-ITEM R1 KNIFE2 DWA
+   	80: MOVE R1 DWA PA
+   	81: MOVE R1 PA MIXA
+   	82: MOVE R1 MIXA CTA
+   	83: DROP-ITEM R1 KNIFE2 CTA
+   	84: PICK-UP-ITEM R1 KNIFE1 CTA
+   	85: CUT-INGREDIENT R1 SEAWEED KNIFE1 CTA
+   	86: DROP-ITEM R1 KNIFE1 CTA
+   	87: PICK-UP-ITEM R1 SEAWEED CTA
+   	88: MOVE R1 CTA MIXA
+   	89: MOVE R1 MIXA PA
+   	90: DROP-ITEM R1 SEAWEED PA
+   	91: MOVE R1 PA DWA
+   	92: CHECK-PREPARED SEAWEED SUSHI
+   	93: MOVE R1 DWA PA
+   	94: MOVE R1 PA MIXA
+   	95: MOVE R1 MIXA CTA
+   	96: PICK-UP-ITEM R1 KNIFE1 CTA
+   	97: MOVE R1 CTA MIXA
+   	98: MOVE R1 MIXA PA
+   	99: MOVE R1 PA DWA
+  	100: DROP-ITEM R1 KNIFE1 DWA
+  	101: CLEAN-TOOL R1 KNIFE1 DWA
+  	102: PICK-UP-ITEM R1 KNIFE1 DWA
+  	103: MOVE R1 DWA PA
+  	104: MOVE R1 PA MIXA
+  	105: MOVE R1 MIXA CTA
+  	106: DROP-ITEM R1 KNIFE1 CTA
+  	107: MOVE R2 CA PA
+  	108: PICK-UP-ITEM R2 RICE PA
+  	109: MOVE R2 PA CA
+  	110: DROP-ITEM R2 RICE CA
+  	111: COOK-INGREDIENT R2 RICE POT2 CA
+  	112: PICK-UP-ITEM R2 RICE CA
+  	113: CHECK-PREPARED RICE SUSHI
+  	114: MOVE R2 CA PA
+  	115: DROP-ITEM R2 RICE PA
+  	116: ASSEMBLE-DISH R2 SUSHI PA
+  	117: PICK-UP-ITEM R2 NOODLES PA
+  	118: MOVE R2 PA CA
+  	119: DROP-ITEM R2 NOODLES CA
+  	120: COOK-INGREDIENT R2 NOODLES POT2 CA
+  	121: CHECK-PREPARED NOODLES RAMEN
+  	122: PICK-UP-ITEM R2 NOODLES CA
+  	123: MOVE R2 CA PA
+  	124: DROP-ITEM R2 NOODLES PA
+  	125: PICK-UP-ITEM R2 BROTH PA
+  	126: MOVE R2 PA CA
+  	127: DROP-ITEM R2 BROTH CA
+  	128: COOK-INGREDIENT R2 BROTH POT2 CA
+  	129: CHECK-PREPARED BROTH RAMEN
+  	130: PICK-UP-ITEM R2 BROTH CA
+  	131: MOVE R2 CA PA
+  	132: DROP-ITEM R2 BROTH PA
+  	133: ASSEMBLE-DISH R2 RAMEN PA
+  	134: PICK-UP-ITEM R2 RAMEN PA
+  	135: MOVE R2 PA CA
+  	136: MOVE R2 CA SVA
+  	137: SERVE-DISH R2 RAMEN SVA
+  	138: MOVE R2 SVA CA
+  	139: MOVE R2 CA PA
+  	140: PICK-UP-ITEM R2 SUSHI PA
+  	141: MOVE R2 PA CA
+  	142: MOVE R2 CA SVA
+  	143: SERVE-DISH R2 SUSHI SVA
+  	144: MOVE R2 SVA CA
+  	145: PICK-UP-ITEM R2 POT2 CA
+  	146: MOVE R2 CA DWA
+  	147: DROP-ITEM R2 POT2 DWA
+  	148: CLEAN-TOOL R2 POT2 DWA
+  	149: PICK-UP-ITEM R2 POT2 DWA
+  	150: MOVE R2 DWA CA
+  	151: DROP-ITEM R2 POT2 CA
+  	152: END-ORDER RAMEN
+  	153: END-ORDER SUSHI
+	 
+
+time spent:	0.00 seconds instantiating 588 easy, 18 hard action templates
+           	0.00 seconds reachability analysis, yielding 222 facts and 542 actions
+           	0.00 seconds creating final representation with 202 relevant facts, 5 relevant fluents
+           	0.01 seconds computing LNF
+           	0.00 seconds building connectivity graph
+          	11.14 seconds searching, evaluating 218831 states, to a max depth of 10
+          	11.15 seconds total time
