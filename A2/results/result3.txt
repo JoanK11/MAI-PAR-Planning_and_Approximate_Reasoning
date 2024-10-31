@@ -1,0 +1,313 @@
+ff: parsing domain file
+domain 'ROBOT-CHEF' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEM3' defined
+ ... done.
+
+
+no metric specified. plan length assumed.
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is EHC, if that fails then  best-first on 1*g(s) + 5*h(s) where
+	metric is  plan length
+
+Cueing down from goal distance:   73 into depth [1]
+                              	72        	[1][2][3][4][5]
+                              	71        	[1][2][3][4]
+                              	70        	[1][2][3][4]
+                              	69        	[1][2][3][4]
+                              	68        	[1][2][3][4]
+                              	67        	[1][2][3][4]
+                              	66        	[1][2][3][4][5]
+                              	65        	[1][2][3][4][5][6]
+                              	64        	[1][2][3][4][5]
+                              	63        	[1][2]
+                              	62        	[1][2][3][4][5][6][7][8]
+                              	61        	[1]
+                              	60        	[1]
+                              	59        	[1]
+                              	58        	[1][2][3][4]
+                              	57        	[1]
+                              	56        	[1][2][3][4][5]
+                              	55        	[1]
+                              	54        	[1][2][3][4][5]
+                              	53        	[1]
+                              	52        	[1][2][3][4][5]
+                              	51        	[1][2][3][4][5][6][7]
+                              	50        	[1][2][3][4]
+                              	49        	[1]
+                              	48        	[1][2]
+                              	47        	[1]
+                              	46        	[1][2][3][4]
+                              	45        	[1]
+                              	44        	[1][2]
+                              	43        	[1]
+                              	42        	[1]
+                              	41        	[1][2][3]
+                              	40        	[1]
+                              	39        	[1][2][3][4][5]
+                              	38        	[1][2]
+                              	37        	[1]
+                              	36        	[1][2][3][4][5][6][7][8]
+                              	35        	[1][2][3][4]
+                              	34        	[1][2][3][4][5][6][7]
+                              	33        	[1]
+                              	32        	[1][2][3]
+                              	31        	[1]
+                              	30        	[1][2][3][4][5]
+                              	29        	[1][2]
+                              	28        	[1]
+                              	27        	[1][2][3][4][5][6][7]
+                              	26        	[1][2][3]
+                              	25        	[1]
+                              	24        	[1][2][3][4][5][6][7]
+                              	23        	[1][2]
+                              	22        	[1][2][3]
+                              	21        	[1]
+                              	20        	[1]
+                              	19        	[1]
+                              	18        	[1][2][3][4][5][6][7][8][9][10][11]
+                              	17        	[1]
+                              	16        	[1][2]
+                              	15        	[1]
+                              	14        	[1][2][3][4][5][6][7][8][9]
+                              	13        	[1][2]
+                              	12        	[1]
+                              	11        	[1]
+                              	10        	[1]
+                               	9        	[1][2][3][4]
+                               	8        	[1]
+                               	7        	[1]
+                               	6        	[1]
+                               	5        	[1]
+                               	4        	[1]
+                               	3        	[1]
+                               	2        	[1]
+                               	1        	[1]
+                               	0       	 
+
+ff: found legal plan as follows
+
+step	0: START-ORDER CURRY_RICE
+    	1: MOVE CA PA
+    	2: MOVE PA MIXA
+    	3: MOVE MIXA SA
+    	4: PICK-UP-ITEM VEGETABLES SA
+    	5: MOVE SA CTA
+    	6: DROP-ITEM VEGETABLES CTA
+    	7: MOVE CTA SA
+    	8: PICK-UP-ITEM FISH SA
+    	9: MOVE SA CTA
+   	10: DROP-ITEM FISH CTA
+   	11: MOVE CTA SA
+   	12: PICK-UP-ITEM SEAWEED SA
+   	13: MOVE SA CTA
+   	14: DROP-ITEM SEAWEED CTA
+   	15: MOVE CTA SA
+   	16: PICK-UP-ITEM RICE2 SA
+   	17: MOVE SA MIXA
+   	18: DROP-ITEM RICE2 MIXA
+   	19: MOVE MIXA SA
+   	20: PICK-UP-ITEM CHICKEN SA
+   	21: MOVE SA CTA
+   	22: DROP-ITEM CHICKEN CTA
+   	23: MOVE CTA SA
+   	24: PICK-UP-ITEM RICE1 SA
+   	25: MOVE SA MIXA
+   	26: DROP-ITEM RICE1 MIXA
+   	27: MOVE MIXA SA
+   	28: PICK-UP-ITEM CURRY SA
+   	29: MOVE SA MIXA
+   	30: MOVE MIXA PA
+   	31: DROP-ITEM CURRY PA
+   	32: MOVE PA MIXA
+   	33: MOVE MIXA SA
+   	34: PICK-UP-ITEM NOODLES SA
+   	35: MOVE SA MIXA
+   	36: MOVE MIXA PA
+   	37: DROP-ITEM NOODLES PA
+   	38: MOVE PA MIXA
+   	39: MOVE MIXA SA
+   	40: PICK-UP-ITEM BROTH SA
+   	41: MOVE SA CTA
+   	42: MOVE CTA MIXA
+   	43: MOVE MIXA PA
+   	44: DROP-ITEM BROTH PA
+   	45: MOVE PA MIXA
+   	46: MOVE MIXA CTA
+   	47: PICK-UP-ITEM KNIFE2 CTA
+   	48: CUT-INGREDIENT VEGETABLES KNIFE2 CTA
+   	49: CUT-INGREDIENT FISH KNIFE2 CTA
+   	50: CUT-INGREDIENT SEAWEED KNIFE2 CTA
+   	51: CUT-INGREDIENT CHICKEN KNIFE2 CTA
+   	52: CHECK-PREPARED VEGETABLES RAMEN
+   	53: CHECK-PREPARED FISH SUSHI
+   	54: CHECK-PREPARED SEAWEED SUSHI
+   	55: DROP-ITEM KNIFE2 CTA
+   	56: PICK-UP-ITEM VEGETABLES CTA
+   	57: MOVE CTA MIXA
+   	58: MOVE MIXA PA
+   	59: DROP-ITEM VEGETABLES PA
+   	60: MOVE PA MIXA
+   	61: MOVE MIXA CTA
+   	62: PICK-UP-ITEM FISH CTA
+   	63: MOVE CTA MIXA
+   	64: MOVE MIXA PA
+   	65: DROP-ITEM FISH PA
+   	66: MOVE PA MIXA
+   	67: MOVE MIXA CTA
+   	68: PICK-UP-ITEM SEAWEED CTA
+   	69: MOVE CTA MIXA
+   	70: MOVE MIXA PA
+   	71: DROP-ITEM SEAWEED PA
+   	72: MOVE PA MIXA
+   	73: MOVE MIXA CTA
+   	74: PICK-UP-ITEM CHICKEN CTA
+   	75: MOVE CTA MIXA
+   	76: MOVE MIXA PA
+   	77: MOVE PA CA
+   	78: DROP-ITEM CHICKEN CA
+   	79: COOK-INGREDIENT CHICKEN POT2 CA
+   	80: PICK-UP-ITEM CHICKEN CA
+   	81: CHECK-PREPARED CHICKEN CURRY_RICE
+   	82: MOVE CA PA
+   	83: DROP-ITEM CHICKEN PA
+   	84: PICK-UP-ITEM NOODLES PA
+   	85: MOVE PA CA
+   	86: DROP-ITEM NOODLES CA
+   	87: COOK-INGREDIENT NOODLES POT2 CA
+   	88: CHECK-PREPARED NOODLES RAMEN
+   	89: PICK-UP-ITEM NOODLES CA
+   	90: MOVE CA PA
+   	91: DROP-ITEM NOODLES PA
+   	92: PICK-UP-ITEM BROTH PA
+   	93: MOVE PA CA
+   	94: DROP-ITEM BROTH CA
+   	95: COOK-INGREDIENT BROTH POT2 CA
+   	96: CHECK-PREPARED BROTH RAMEN
+   	97: PICK-UP-ITEM BROTH CA
+   	98: MOVE CA PA
+   	99: DROP-ITEM BROTH PA
+  	100: ASSEMBLE-DISH RAMEN PA
+  	101: PICK-UP-ITEM RAMEN PA
+  	102: MOVE PA CA
+  	103: MOVE CA SVA
+  	104: SERVE-DISH RAMEN SVA
+  	105: MOVE SVA CA
+  	106: PICK-UP-ITEM POT2 CA
+  	107: MOVE CA DWA
+  	108: DROP-ITEM POT2 DWA
+  	109: CLEAN-TOOL POT2 DWA
+  	110: PICK-UP-ITEM POT2 DWA
+  	111: MOVE DWA CA
+  	112: DROP-ITEM POT2 CA
+  	113: MOVE CA PA
+  	114: MOVE PA MIXA
+  	115: PICK-UP-ITEM GLOVES MIXA
+  	116: MIX-INGREDIENT RICE2 GLOVES MIXA
+  	117: MIX-INGREDIENT RICE1 GLOVES MIXA
+  	118: DROP-ITEM GLOVES MIXA
+  	119: PICK-UP-ITEM RICE2 MIXA
+  	120: MOVE MIXA PA
+  	121: DROP-ITEM RICE2 PA
+  	122: MOVE PA MIXA
+  	123: PICK-UP-ITEM RICE1 MIXA
+  	124: MOVE MIXA PA
+  	125: MOVE PA CA
+  	126: DROP-ITEM RICE1 CA
+  	127: COOK-INGREDIENT RICE1 POT2 CA
+  	128: PICK-UP-ITEM RICE1 CA
+  	129: CHECK-PREPARED RICE1 SUSHI
+  	130: MOVE CA PA
+  	131: DROP-ITEM RICE1 PA
+  	132: ASSEMBLE-DISH SUSHI PA
+  	133: PICK-UP-ITEM SUSHI PA
+  	134: MOVE PA CA
+  	135: MOVE CA SVA
+  	136: SERVE-DISH SUSHI SVA
+  	137: MOVE SVA CA
+  	138: PICK-UP-ITEM POT2 CA
+  	139: MOVE CA DWA
+  	140: DROP-ITEM POT2 DWA
+  	141: CLEAN-TOOL POT2 DWA
+  	142: PICK-UP-ITEM POT2 DWA
+  	143: MOVE DWA CA
+  	144: DROP-ITEM POT2 CA
+  	145: MOVE CA PA
+  	146: MOVE PA MIXA
+  	147: PICK-UP-ITEM GLOVES MIXA
+  	148: MOVE MIXA PA
+  	149: MOVE PA DWA
+  	150: DROP-ITEM GLOVES DWA
+  	151: CLEAN-TOOL GLOVES DWA
+  	152: PICK-UP-ITEM GLOVES DWA
+  	153: MOVE DWA PA
+  	154: MOVE PA MIXA
+  	155: DROP-ITEM GLOVES MIXA
+  	156: MOVE MIXA CTA
+  	157: PICK-UP-ITEM KNIFE2 CTA
+  	158: MOVE CTA MIXA
+  	159: MOVE MIXA PA
+  	160: MOVE PA DWA
+  	161: DROP-ITEM KNIFE2 DWA
+  	162: CLEAN-TOOL KNIFE2 DWA
+  	163: PICK-UP-ITEM KNIFE2 DWA
+  	164: MOVE DWA CA
+  	165: MOVE CA PA
+  	166: MOVE PA MIXA
+  	167: MOVE MIXA CTA
+  	168: DROP-ITEM KNIFE2 CTA
+  	169: MOVE CTA MIXA
+  	170: MOVE MIXA PA
+  	171: PICK-UP-ITEM RICE2 PA
+  	172: MOVE PA CA
+  	173: DROP-ITEM RICE2 CA
+  	174: COOK-INGREDIENT RICE2 POT2 CA
+  	175: PICK-UP-ITEM POT2 CA
+  	176: MOVE CA DWA
+  	177: DROP-ITEM POT2 DWA
+  	178: CHECK-PREPARED RICE2 CURRY_RICE
+  	179: CLEAN-TOOL POT2 DWA
+  	180: PICK-UP-ITEM POT2 DWA
+  	181: MOVE DWA CA
+  	182: DROP-ITEM POT2 CA
+  	183: PICK-UP-ITEM RICE2 CA
+  	184: MOVE CA PA
+  	185: DROP-ITEM RICE2 PA
+  	186: PICK-UP-ITEM CURRY PA
+  	187: MOVE PA CA
+  	188: DROP-ITEM CURRY CA
+  	189: COOK-INGREDIENT CURRY POT2 CA
+  	190: PICK-UP-ITEM CURRY CA
+  	191: CHECK-PREPARED CURRY CURRY_RICE
+  	192: MOVE CA PA
+  	193: DROP-ITEM CURRY PA
+  	194: ASSEMBLE-DISH CURRY_RICE PA
+  	195: PICK-UP-ITEM CURRY_RICE PA
+  	196: MOVE PA CA
+  	197: MOVE CA SVA
+  	198: SERVE-DISH CURRY_RICE SVA
+  	199: MOVE SVA CA
+  	200: PICK-UP-ITEM POT2 CA
+  	201: MOVE CA DWA
+  	202: DROP-ITEM POT2 DWA
+  	203: CLEAN-TOOL POT2 DWA
+  	204: PICK-UP-ITEM POT2 DWA
+  	205: MOVE DWA CA
+  	206: DROP-ITEM POT2 CA
+  	207: END-ORDER CURRY_RICE
+  	208: START-ORDER RAMEN
+  	209: END-ORDER RAMEN
+  	210: START-ORDER SUSHI
+  	211: END-ORDER SUSHI
+	 
+
+time spent:	0.01 seconds instantiating 370 easy, 27 hard action templates
+           	0.00 seconds reachability analysis, yielding 257 facts and 359 actions
+           	0.00 seconds creating final representation with 233 relevant facts, 0 relevant fluents
+           	0.00 seconds computing LNF
+           	0.00 seconds building connectivity graph
+           	0.79 seconds searching, evaluating 9262 states, to a max depth of 11
+           	0.80 seconds total time

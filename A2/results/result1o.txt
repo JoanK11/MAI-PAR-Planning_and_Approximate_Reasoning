@@ -1,0 +1,134 @@
+ff: parsing domain file
+domain 'ROBOT-CHEF' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEM1' defined
+ ... done.
+
+
+no metric specified. plan length assumed.
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 5*h(s) where
+	metric is  plan length
+
+advancing to distance:   29
+                     	28
+                     	27
+                     	26
+                     	24
+                     	23
+                     	22
+                     	21
+                     	20
+                     	19
+                     	18
+                     	17
+                     	16
+                     	15
+                     	14
+                     	13
+                     	12
+                     	10
+                      	9
+                      	8
+                      	7
+                      	6
+                      	5
+                      	4
+                      	3
+                      	2
+                      	1
+                      	0
+
+ff: found legal plan as follows
+
+step	0: START-ORDER SUSHI
+    	1: MOVE CA PA
+    	2: MOVE PA MIXA
+    	3: MOVE MIXA SA
+    	4: PICK-UP-ITEM FISH SA
+    	5: MOVE SA CTA
+    	6: DROP-ITEM FISH CTA
+    	7: MOVE CTA SA
+    	8: PICK-UP-ITEM SEAWEED SA
+    	9: MOVE SA CTA
+   	10: DROP-ITEM SEAWEED CTA
+   	11: MOVE CTA SA
+   	12: PICK-UP-ITEM RICE SA
+   	13: MOVE SA MIXA
+   	14: DROP-ITEM RICE MIXA
+   	15: MOVE MIXA CTA
+   	16: PICK-UP-ITEM KNIFE CTA
+   	17: CUT-INGREDIENT FISH KNIFE CTA
+   	18: CHECK-PREPARED FISH SUSHI
+   	19: CUT-INGREDIENT SEAWEED KNIFE CTA
+   	20: CHECK-PREPARED SEAWEED SUSHI
+   	21: DROP-ITEM KNIFE CTA
+   	22: PICK-UP-ITEM SEAWEED CTA
+   	23: MOVE CTA MIXA
+   	24: MOVE MIXA PA
+   	25: DROP-ITEM SEAWEED PA
+   	26: MOVE PA MIXA
+   	27: MOVE MIXA CTA
+   	28: PICK-UP-ITEM FISH CTA
+   	29: MOVE CTA MIXA
+   	30: MOVE MIXA PA
+   	31: DROP-ITEM FISH PA
+   	32: MOVE PA MIXA
+   	33: MOVE MIXA CTA
+   	34: PICK-UP-ITEM KNIFE CTA
+   	35: MOVE CTA MIXA
+   	36: MOVE MIXA PA
+   	37: MOVE PA DWA
+   	38: DROP-ITEM KNIFE DWA
+   	39: CLEAN-TOOL KNIFE DWA
+   	40: PICK-UP-ITEM KNIFE DWA
+   	41: MOVE DWA PA
+   	42: MOVE PA MIXA
+   	43: MOVE MIXA CTA
+   	44: DROP-ITEM KNIFE CTA
+   	45: MOVE CTA MIXA
+   	46: PICK-UP-ITEM GLOVES MIXA
+   	47: MIX-INGREDIENT RICE GLOVES MIXA
+   	48: MOVE MIXA PA
+   	49: MOVE PA DWA
+   	50: DROP-ITEM GLOVES DWA
+   	51: CLEAN-TOOL GLOVES DWA
+   	52: PICK-UP-ITEM GLOVES DWA
+   	53: MOVE DWA PA
+   	54: MOVE PA MIXA
+   	55: DROP-ITEM GLOVES MIXA
+   	56: PICK-UP-ITEM RICE MIXA
+   	57: MOVE MIXA PA
+   	58: MOVE PA CA
+   	59: DROP-ITEM RICE CA
+   	60: COOK-INGREDIENT RICE POT CA
+   	61: CHECK-PREPARED RICE SUSHI
+   	62: PICK-UP-ITEM RICE CA
+   	63: MOVE CA PA
+   	64: DROP-ITEM RICE PA
+   	65: ASSEMBLE-DISH SUSHI PA
+   	66: PICK-UP-ITEM SUSHI PA
+   	67: MOVE PA CA
+   	68: MOVE CA SVA
+   	69: SERVE-DISH SUSHI SVA
+   	70: MOVE SVA CA
+   	71: PICK-UP-ITEM POT CA
+   	72: MOVE CA DWA
+   	73: DROP-ITEM POT DWA
+   	74: CLEAN-TOOL POT DWA
+   	75: PICK-UP-ITEM POT DWA
+   	76: MOVE DWA CA
+   	77: DROP-ITEM POT CA
+   	78: END-ORDER SUSHI
+	 
+
+time spent:	0.00 seconds instantiating 129 easy, 9 hard action templates
+           	0.00 seconds reachability analysis, yielding 94 facts and 133 actions
+           	0.00 seconds creating final representation with 89 relevant facts, 0 relevant fluents
+           	0.00 seconds computing LNF
+           	0.00 seconds building connectivity graph
+           	0.12 seconds searching, evaluating 3099 states, to a max depth of 0
+           	0.12 seconds total time

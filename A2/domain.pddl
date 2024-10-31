@@ -2,87 +2,96 @@
 
 (:requirements :typing :strips :fluents :adl)
 
-(:types Location Item - Object
+(:types
+    Location Item - Object
     Ingredient Tool Dish - Item
-    TCut TMix TCook - Tool
+    Cutter Mixer Cooker - Tool
     CA SVA DWA PA MIXA CTA SA - Location
 )
 
 (:predicates
-    (robot-at ?l) ; The robot is at location l
-    (item-at ?i - Item ?l - Location) ; The item i is at location l
-    (dish-prepared ?d - Dish) ; The dish d is prepared, preparat per ser servit
-    (dish-served ?d - Dish)
-    (adjacent ?l1 - Location ?l2 - Location) ; 
-    (holding ?i - Item)
-    (is-holding)
-    (tool-clean ?t - Tool)
-    (processing-order ?d - Dish)
-    (is-processing-order)
+    ;; Robot Status
+    (robot-at ?l) ; Robot is at location ?l
+    (holding ?i - Item) ; Robot is holding item ?i
+    (holding-any) ; Robot is holding something
 
-    ; Ingredient State
-    (ingredient-cut ?i - Ingredient)
-    (ingredient-mixed ?i - Ingredient)
-    (ingredient-cooked ?i - Ingredient)
-    (ingredient-ready ?i - Ingredient)
+    ;; Item Locations
+    (item-at ?i - Item ?l - Location) ; Item ?i is at location ?l
 
-    ; Ingredient Needs
-    (needs-cutting ?i - Ingredient)
-    (needs-mixing ?i - Ingredient)
-    (needs-cooking ?i - Ingredient)
+    ;; Tool Status & Locations
+    (tool-clean ?t - Tool) ; Tool ?t is clean
+    (initial-tool-loc ?t - Tool ?l - Location) ; Initial location of tool ?t is ?l
 
-    (order-processed ?d - Dish)
+    ;; Order Status
+    (processing-order ?d - Dish) ; Order for dish ?d is being processed
+    (processing-any-order) ; Any order is being processed
+    (order-processed ?d - Dish) ; Order for dish ?d has been processed
+    
+    ;; Dish Status & Requirements
+    (dish-prepared ?d - Dish) ; Dish ?d is prepared (ready to be served)
+    (dish-served ?d - Dish) ; Dish ?d is served
+    (ingredient-in-dish ?d - Dish ?i - Ingredient) ; Ingredient ?i is part of dish ?d
 
-    (ingredient-in-dish ?d - Dish ?i - Ingredient)
-    (initial-tool-pos ?t - Tool ?l - Location)
+    ;; Adjacent Locations
+    (adjacent ?l1 - Location ?l2 - Location) ; Locations ?l1 and ?l2 are adjacent
+    
+    ;; Ingredient States
+    (ingredient-cut ?i - Ingredient)    ; Ingredient ?i is cut
+    (ingredient-mixed ?i - Ingredient)  ; Ingredient ?i is mixed
+    (ingredient-cooked ?i - Ingredient) ; Ingredient ?i is cooked
+    (ingredient-ready ?i - Ingredient)  ; Ingredient ?i is ready
+
+    ;; Ingredient Needs
+    (needs-cutting ?i - Ingredient) ; Ingredient ?i needs cutting
+    (needs-mixing ?i - Ingredient)  ; Ingredient ?i needs mixing
+    (needs-cooking ?i - Ingredient) ; Ingredient ?i needs cooking
 )
 
-(:action move ; Fet
-    :parameters (?l1 - Location ?l2 - Location)
-    :precondition (and (robot-at ?l1) (adjacent ?l1 ?l2))
-    :effect (and (not (robot-at ?l1)) (robot-at ?l2))
+(:action move
+    :parameters (?from - Location ?to - Location)
+    :precondition (and (robot-at ?from) (adjacent ?from ?to))
+    :effect (and (not (robot-at ?from)) (robot-at ?to))
 )
 
-(:action pick-up-item ; Fet
+(:action pick-up-item
     :parameters (?i - Item ?l - Location)
-    :precondition (and (robot-at ?l) (item-at ?i ?l) (not (is-holding)))
-    :effect (and (not (item-at ?i ?l)) (holding ?i) (is-holding))
+    :precondition (and (robot-at ?l) (item-at ?i ?l) (not (holding-any)))
+    :effect (and (not (item-at ?i ?l)) (holding ?i) (holding-any))
 )
 
-(:action drop-item ; Fet
+(:action drop-item
     :parameters (?i - Item ?l - Location)
     :precondition (and (robot-at ?l) (holding ?i))
-    :effect (and (item-at ?i ?l) (not (holding ?i)) (not (is-holding)))
+    :effect (and (item-at ?i ?l) (not (holding ?i)) (not (holding-any)))
 )
 
-(:action clean-tool ; Fet
+(:action clean-tool
     :parameters (?t - Tool ?l - DWA)
-    :precondition (and (robot-at ?l) (item-at ?t ?l)) ; ToDo: Veure que després el planner no netejarà moltes vegades una tool neta
+    :precondition (and (robot-at ?l) (item-at ?t ?l))
     :effect (tool-clean ?t)
 )
 
-; Assumpció no cal netejar eines mentres cuinem un dish
-(:action cut-ingredient ; DONE
-    :parameters (?i - Ingredient ?t - TCut ?l - CTA)
+(:action cut-ingredient
+    :parameters (?i - Ingredient ?t - Cutter ?l - CTA)
     :precondition (and (robot-at ?l) (holding ?t) (item-at ?i ?l) (needs-cutting ?i))
     :effect (and (ingredient-cut ?i) (not (needs-cutting ?i)) (not (tool-clean ?t)))
 )
 
-(:action mix-ingredient ; DONE
-    :parameters (?i - Ingredient ?t - TMix ?l - MIXA)
+(:action mix-ingredient
+    :parameters (?i - Ingredient ?t - Mixer ?l - MIXA)
     :precondition (and (robot-at ?l) (holding ?t) (item-at ?i ?l) (needs-mixing ?i))
     :effect (and (ingredient-mixed ?i) (not (needs-mixing ?i)) (not (tool-clean ?t)))
 )
 
-(:action cook-ingredient ; DONE
-    :parameters (?i - Ingredient ?t - TCook ?l - CA)
-    :precondition (and (robot-at ?l) (not (is-holding)) (item-at ?i ?l) (item-at ?t ?l) (needs-cooking ?i))
+(:action cook-ingredient
+    :parameters (?i - Ingredient ?t - Cooker ?l - CA)
+    :precondition (and (robot-at ?l) (not (holding-any)) (item-at ?i ?l) (item-at ?t ?l) (needs-cooking ?i))
     :effect (and (ingredient-cooked ?i) (not (needs-cooking ?i)) (not (tool-clean ?t)))
 )
 
 (:action check-prepared
     :parameters (?i - Ingredient ?d - Dish)
-    :precondition (and (ingredient-in-dish ?d ?i) ; ToDo: Fa falta ingredient-in-dish en la precondició??
+    :precondition (and (ingredient-in-dish ?d ?i)
         (or (not (needs-cutting ?i)) (ingredient-cut ?i))
         (or (not (needs-mixing ?i)) (ingredient-mixed ?i))
         (or (not (needs-cooking ?i)) (ingredient-cooked ?i))
@@ -92,7 +101,7 @@
 
 (:action assemble-dish
     :parameters (?d - Dish ?l - PA)
-    :precondition (and (robot-at ?l) (not (is-holding))
+    :precondition (and (robot-at ?l) (not (holding-any))
                     (forall (?i - Ingredient)
                         (imply
                             (ingredient-in-dish ?d ?i)
@@ -110,29 +119,29 @@
     )
 )
 
-(:action serve-dish ; Fet
+(:action serve-dish
     :parameters (?d - Dish ?l - SVA)
     :precondition (and (robot-at ?l) (holding ?d) (dish-prepared ?d))
-    :effect (and (dish-served ?d) (not (holding ?d)) (not (is-holding)))
+    :effect (and (dish-served ?d) (not (holding ?d)) (not (holding-any)))
 )
 
-(:action start-order ; Fet
+(:action start-order
     :parameters (?d - Dish)
-    :precondition (and (not (is-processing-order)))
-    :effect (and (is-processing-order) (processing-order ?d))
+    :precondition (and (not (processing-any-order)))
+    :effect (and (processing-any-order) (processing-order ?d))
 )
 
-(:action end-order ; Fet
+(:action end-order
     :parameters (?d - Dish)
     :precondition (and (processing-order ?d) (dish-served ?d)
         (forall (?t - Tool)
             (and (tool-clean ?t)
                 (exists (?l - Location)
-                    (and (initial-tool-pos ?t ?l) (item-at ?t ?l))
+                    (and (initial-tool-loc ?t ?l) (item-at ?t ?l))
                 )
             )
         )
     )
-    :effect (and (not (processing-order ?d)) (not (is-processing-order)) (order-processed ?d))
+    :effect (and (not (processing-order ?d)) (not (processing-any-order)) (order-processed ?d))
 )
 )

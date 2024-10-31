@@ -1,0 +1,137 @@
+ff: parsing domain file
+domain 'ROBOT-CHEF' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEM1' defined
+ ... done.
+
+
+no metric specified. plan length assumed.
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is EHC, if that fails then  best-first on 1*g(s) + 5*h(s) where
+	metric is  plan length
+
+Cueing down from goal distance:   29 into depth [1]
+                              	28        	[1][2][3][4][5]
+                              	27        	[1][2][3][4]
+                              	26        	[1][2][3][4]
+                              	25        	[1]
+                              	24        	[1][2][3][4][5][6][7]
+                              	23        	[1][2][3][4]
+                              	22        	[1]
+                              	21        	[1][2][3][4][5]
+                              	20        	[1]
+                              	19        	[1][2][3][4][5][6][7][8]
+                              	18        	[1][2]
+                              	17        	[1][2][3]
+                              	16        	[1]
+                              	15        	[1]
+                              	14        	[1][2][3][4][5][6][7][8][9]
+                              	13        	[1]
+                              	12        	[1][2]
+                              	10        	[1][2][3][4][5][6][7][8]
+                               	9        	[1][2]
+                               	8        	[1]
+                               	7        	[1]
+                               	6        	[1]
+                               	5        	[1][2][3][4]
+                               	4        	[1]
+                               	3        	[1]
+                               	2        	[1]
+                               	1        	[1]
+                               	0       	 
+
+ff: found legal plan as follows
+
+step	0: START-ORDER SUSHI
+    	1: MOVE CA PA
+    	2: MOVE PA MIXA
+    	3: MOVE MIXA SA
+    	4: PICK-UP-ITEM FISH SA
+    	5: MOVE SA CTA
+    	6: DROP-ITEM FISH CTA
+    	7: MOVE CTA SA
+    	8: PICK-UP-ITEM SEAWEED SA
+    	9: MOVE SA CTA
+   	10: DROP-ITEM SEAWEED CTA
+   	11: MOVE CTA SA
+   	12: PICK-UP-ITEM RICE SA
+   	13: MOVE SA CTA
+   	14: MOVE CTA MIXA
+   	15: DROP-ITEM RICE MIXA
+   	16: MOVE MIXA CTA
+   	17: PICK-UP-ITEM KNIFE CTA
+   	18: CUT-INGREDIENT FISH KNIFE CTA
+   	19: CUT-INGREDIENT SEAWEED KNIFE CTA
+   	20: CHECK-PREPARED FISH SUSHI
+   	21: CHECK-PREPARED SEAWEED SUSHI
+   	22: DROP-ITEM KNIFE CTA
+   	23: PICK-UP-ITEM FISH CTA
+   	24: MOVE CTA MIXA
+   	25: MOVE MIXA PA
+   	26: DROP-ITEM FISH PA
+   	27: MOVE PA MIXA
+   	28: MOVE MIXA CTA
+   	29: PICK-UP-ITEM SEAWEED CTA
+   	30: MOVE CTA MIXA
+   	31: MOVE MIXA PA
+   	32: DROP-ITEM SEAWEED PA
+   	33: MOVE PA MIXA
+   	34: MOVE MIXA CTA
+   	35: PICK-UP-ITEM KNIFE CTA
+   	36: MOVE CTA MIXA
+   	37: MOVE MIXA PA
+   	38: MOVE PA DWA
+   	39: DROP-ITEM KNIFE DWA
+   	40: CLEAN-TOOL KNIFE DWA
+   	41: PICK-UP-ITEM KNIFE DWA
+   	42: MOVE DWA CA
+   	43: MOVE CA PA
+   	44: MOVE PA MIXA
+   	45: MOVE MIXA CTA
+   	46: DROP-ITEM KNIFE CTA
+   	47: MOVE CTA MIXA
+   	48: PICK-UP-ITEM GLOVES MIXA
+   	49: MIX-INGREDIENT RICE GLOVES MIXA
+   	50: MOVE MIXA PA
+   	51: MOVE PA DWA
+   	52: DROP-ITEM GLOVES DWA
+   	53: CLEAN-TOOL GLOVES DWA
+   	54: PICK-UP-ITEM GLOVES DWA
+   	55: MOVE DWA PA
+   	56: MOVE PA MIXA
+   	57: DROP-ITEM GLOVES MIXA
+   	58: PICK-UP-ITEM RICE MIXA
+   	59: MOVE MIXA PA
+   	60: MOVE PA CA
+   	61: DROP-ITEM RICE CA
+   	62: COOK-INGREDIENT RICE POT CA
+   	63: PICK-UP-ITEM RICE CA
+   	64: CHECK-PREPARED RICE SUSHI
+   	65: MOVE CA PA
+   	66: DROP-ITEM RICE PA
+   	67: ASSEMBLE-DISH SUSHI PA
+   	68: PICK-UP-ITEM SUSHI PA
+   	69: MOVE PA CA
+   	70: MOVE CA SVA
+   	71: SERVE-DISH SUSHI SVA
+   	72: MOVE SVA CA
+   	73: PICK-UP-ITEM POT CA
+   	74: MOVE CA DWA
+   	75: DROP-ITEM POT DWA
+   	76: CLEAN-TOOL POT DWA
+   	77: PICK-UP-ITEM POT DWA
+   	78: MOVE DWA CA
+   	79: DROP-ITEM POT CA
+   	80: END-ORDER SUSHI
+	 
+
+time spent:	0.00 seconds instantiating 129 easy, 9 hard action templates
+           	0.00 seconds reachability analysis, yielding 94 facts and 133 actions
+           	0.00 seconds creating final representation with 89 relevant facts, 0 relevant fluents
+           	0.00 seconds computing LNF
+           	0.00 seconds building connectivity graph
+           	0.01 seconds searching, evaluating 950 states, to a max depth of 9
+           	0.01 seconds total time
