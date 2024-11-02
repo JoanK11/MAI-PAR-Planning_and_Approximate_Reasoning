@@ -2,9 +2,9 @@
 (:objects 
     sushi ramen - Dish
     fish seaweed rice noodles broth vegetables meat milk eggs - Ingredient
-    knife1 knife2 - Cutter
+    knife - Cutter
     gloves - Mixer
-    pot1 pot2 - Cooker
+    pot - Cooker
 
     ca - CA
     sva - SVA
@@ -24,9 +24,9 @@
     (adjacent sa cta) (adjacent cta sa) (adjacent mixa sa) (adjacent sa mixa)
 
     ; -- Tools --
-    (item-at knife1 cta) (item-at knife2 cta) (item-at gloves mixa) (item-at pot1 ca) (item-at pot2 ca)
-    (initial-tool-loc knife1 cta) (initial-tool-loc knife2 cta) (initial-tool-loc gloves mixa) (initial-tool-loc pot1 ca) (initial-tool-loc pot2 ca)
-    (tool-clean knife1) (tool-clean knife2) (tool-clean gloves) (tool-clean pot1) (tool-clean pot2)
+    (item-at knife cta) (item-at gloves mixa) (item-at pot ca)
+    (initial-tool-loc knife cta) (initial-tool-loc gloves mixa) (initial-tool-loc pot ca)
+    (tool-clean knife) (tool-clean gloves) (tool-clean pot)
 
     ; -- Sushi --
     (item-at fish sa) (item-at seaweed sa) (item-at rice sa)
