@@ -63,8 +63,8 @@ step	0: START-ORDER SUSHI
    	15: DROP-ITEM RICE MIXA
    	16: MOVE MIXA CTA
    	17: PICK-UP-ITEM KNIFE CTA
-   	18: CUT-INGREDIENT FISH KNIFE CTA
-   	19: CUT-INGREDIENT SEAWEED KNIFE CTA
+   	18: CUT-INGREDIENT FISH KNIFE SUSHI CTA
+   	19: CUT-INGREDIENT SEAWEED KNIFE SUSHI CTA
    	20: CHECK-PREPARED FISH SUSHI
    	21: CHECK-PREPARED SEAWEED SUSHI
    	22: DROP-ITEM KNIFE CTA
@@ -94,7 +94,7 @@ step	0: START-ORDER SUSHI
    	46: DROP-ITEM KNIFE CTA
    	47: MOVE CTA MIXA
    	48: PICK-UP-ITEM GLOVES MIXA
-   	49: MIX-INGREDIENT RICE GLOVES MIXA
+   	49: MIX-INGREDIENT RICE GLOVES SUSHI MIXA
    	50: MOVE MIXA PA
    	51: MOVE PA DWA
    	52: DROP-ITEM GLOVES DWA
@@ -107,7 +107,7 @@ step	0: START-ORDER SUSHI
    	59: MOVE MIXA PA
    	60: MOVE PA CA
    	61: DROP-ITEM RICE CA
-   	62: COOK-INGREDIENT RICE POT CA
+   	62: COOK-INGREDIENT RICE POT SUSHI CA
    	63: PICK-UP-ITEM RICE CA
    	64: CHECK-PREPARED RICE SUSHI
    	65: MOVE CA PA
@@ -133,5 +133,5 @@ time spent:	0.00 seconds instantiating 129 easy, 9 hard action templates
            	0.00 seconds creating final representation with 89 relevant facts, 0 relevant fluents
            	0.00 seconds computing LNF
            	0.00 seconds building connectivity graph
-           	0.01 seconds searching, evaluating 950 states, to a max depth of 9
-           	0.01 seconds total time
+           	0.02 seconds searching, evaluating 950 states, to a max depth of 9
+           	0.02 seconds total time
