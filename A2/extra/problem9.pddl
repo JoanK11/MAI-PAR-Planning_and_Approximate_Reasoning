@@ -1,7 +1,8 @@
-(define (problem problem3) (:domain robot-chef)
+(define (problem problem9) (:domain robot-chef-plus) ; 3 robots, 2 dishes
 (:objects 
-    sushi ramen curry_rice - Dish
-    fish seaweed rice1 rice2 chicken curry noodles broth vegetables meat milk eggs - Ingredient
+    r1 r2 r3 - Robot
+    sushi ramen - Dish
+    fish seaweed rice1 noodles broth vegetables meat milk eggs - Ingredient
     knife - Cutter
     gloves - Mixer
     pot - Cooker
@@ -16,7 +17,7 @@
 )
 
 (:init
-    (robot-at ca)
+    (robot-at r1 ca) (robot-at r2 pa) (robot-at r3 sa)
 
     (adjacent ca sva) (adjacent sva ca) (adjacent ca dwa) (adjacent dwa ca)
     (adjacent ca pa) (adjacent pa ca) (adjacent pa dwa) (adjacent dwa pa)
@@ -27,6 +28,10 @@
     (item-at knife cta) (item-at gloves mixa) (item-at pot ca)
     (initial-tool-loc knife cta) (initial-tool-loc gloves mixa) (initial-tool-loc pot ca)
     (tool-clean knife) (tool-clean gloves) (tool-clean pot)
+
+    (= (tool-durability knife) 20)
+    (= (tool-durability gloves) 20)
+    (= (tool-durability pot) 40)
 
     ; -- Sushi --
     (item-at fish sa) (item-at seaweed sa) (item-at rice1 sa)
@@ -49,17 +54,6 @@
     (needs-cooking noodles)
     (needs-cooking broth)
     (needs-cutting vegetables)
-
-    ; -- Curry Rice --
-    (item-at chicken sa) (item-at rice2 sa) (item-at curry sa)
-
-    (ingredient-in-dish curry_rice chicken)
-    (ingredient-in-dish curry_rice rice2)
-    (ingredient-in-dish curry_rice curry)
-
-    (needs-cutting chicken) (needs-cooking chicken)
-    (needs-mixing rice2) (needs-cooking rice2)
-    (needs-cooking curry)
 
     ; -- Other Ingredients --
     (item-at meat sa) (item-at milk sa) (item-at eggs sa)

@@ -1,10 +1,11 @@
-(define (problem problem3) (:domain robot-chef)
+(define (problem problem7) (:domain robot-chef-plus) ; 2 robots, 3 dishes
 (:objects 
+    r1 r2 - Robot
     sushi ramen curry_rice - Dish
     fish seaweed rice1 rice2 chicken curry noodles broth vegetables meat milk eggs - Ingredient
-    knife - Cutter
+    knife1 knife2 knife3 - Cutter
     gloves - Mixer
-    pot - Cooker
+    pot1 pot2 - Cooker
 
     ca - CA
     sva - SVA
@@ -16,7 +17,7 @@
 )
 
 (:init
-    (robot-at ca)
+    (robot-at r1 ca) (robot-at r2 pa)
 
     (adjacent ca sva) (adjacent sva ca) (adjacent ca dwa) (adjacent dwa ca)
     (adjacent ca pa) (adjacent pa ca) (adjacent pa dwa) (adjacent dwa pa)
@@ -24,9 +25,13 @@
     (adjacent sa cta) (adjacent cta sa) (adjacent mixa sa) (adjacent sa mixa)
 
     ; -- Tools --
-    (item-at knife cta) (item-at gloves mixa) (item-at pot ca)
-    (initial-tool-loc knife cta) (initial-tool-loc gloves mixa) (initial-tool-loc pot ca)
-    (tool-clean knife) (tool-clean gloves) (tool-clean pot)
+    (item-at knife1 cta) (item-at knife2 cta) (item-at knife3 cta) (item-at gloves mixa) (item-at pot1 ca) (item-at pot2 ca)
+    (initial-tool-loc knife1 cta) (initial-tool-loc knife2 cta) (initial-tool-loc knife3 cta) (initial-tool-loc gloves mixa) (initial-tool-loc pot1 ca) (initial-tool-loc pot2 ca)
+    (tool-clean knife1) (tool-clean knife2) (tool-clean knife3) (tool-clean gloves) (tool-clean pot1) (tool-clean pot2)
+
+    (= (tool-durability knife1) 2) (= (tool-durability knife2) 1) (= (tool-durability knife3) 1)
+    (= (tool-durability gloves) 2)
+    (= (tool-durability pot1) 4) (= (tool-durability pot2) 3)
 
     ; -- Sushi --
     (item-at fish sa) (item-at seaweed sa) (item-at rice1 sa)

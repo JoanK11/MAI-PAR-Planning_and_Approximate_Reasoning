@@ -30,6 +30,7 @@
 
     ;; Order Status
     (processing-order ?d - Dish) ; Order for dish ?d is being processed
+    (processing-any-order) ; Any order is being processed
     (order-processed ?d - Dish) ; Order for dish ?d has been processed
     
     ;; Dish Status & Requirements
@@ -78,19 +79,19 @@
 
 (:action cut-ingredient
     :parameters (?r - Robot ?i - Ingredient ?t - Cutter ?d - Dish ?l - CTA)
-    :precondition (and (robot-at ?r ?l) (holding ?r ?t) (item-at ?i ?l) (needs-cutting ?i) (> (tool-durability ?t) 0) (ingredient-in-dish ?d ?i) (or (tool-clean ?t) (tool-used-by ?t ?d)))
+    :precondition (and (robot-at ?r ?l) (holding ?r ?t) (item-at ?i ?l) (needs-cutting ?i) (> (tool-durability ?t) 0) (ingredient-in-dish ?d ?i) (or (tool-clean ?t) (tool-used-by ?t ?d)) (processing-order ?d) (ingredient-in-dish ?d ?i))
     :effect (and (ingredient-cut ?i) (not (needs-cutting ?i)) (not (tool-clean ?t)) (tool-used-by ?t ?d) (decrease (tool-durability ?t) 1))
 )
 
 (:action mix-ingredient
     :parameters (?r - Robot ?i - Ingredient ?t - Mixer ?d - Dish ?l - MIXA)
-    :precondition (and (robot-at ?r ?l) (holding ?r ?t) (item-at ?i ?l) (needs-mixing ?i) (> (tool-durability ?t) 0) (ingredient-in-dish ?d ?i) (or (tool-clean ?t) (tool-used-by ?t ?d)))
+    :precondition (and (robot-at ?r ?l) (holding ?r ?t) (item-at ?i ?l) (needs-mixing ?i) (> (tool-durability ?t) 0) (ingredient-in-dish ?d ?i) (or (tool-clean ?t) (tool-used-by ?t ?d)) (processing-order ?d) (ingredient-in-dish ?d ?i))
     :effect (and (ingredient-mixed ?i) (not (needs-mixing ?i)) (not (tool-clean ?t)) (tool-used-by ?t ?d) (decrease (tool-durability ?t) 1))
 )
 
 (:action cook-ingredient
     :parameters (?r - Robot ?i - Ingredient ?t - Cooker ?d - Dish ?l - CA)
-    :precondition (and (robot-at ?r ?l) (not (holding-any ?r)) (item-at ?i ?l) (item-at ?t ?l) (needs-cooking ?i) (> (tool-durability ?t) 0) (ingredient-in-dish ?d ?i) (or (tool-clean ?t) (tool-used-by ?t ?d)))
+    :precondition (and (robot-at ?r ?l) (not (holding-any ?r)) (item-at ?i ?l) (item-at ?t ?l) (needs-cooking ?i) (> (tool-durability ?t) 0) (ingredient-in-dish ?d ?i) (or (tool-clean ?t) (tool-used-by ?t ?d)) (processing-order ?d) (ingredient-in-dish ?d ?i))
     :effect (and (ingredient-cooked ?i) (not (needs-cooking ?i)) (not (tool-clean ?t)) (tool-used-by ?t ?d) (decrease (tool-durability ?t) 1))
 )
 
@@ -132,7 +133,8 @@
 
 (:action start-order
     :parameters (?d - Dish)
-    :effect (processing-order ?d)
+    :precondition (and (not (processing-any-order)))
+    :effect (and (processing-any-order) (processing-order ?d))
 )
 
 (:action end-order
@@ -148,7 +150,7 @@
             )
         )
     )
-    :effect (and (not (processing-order ?d)) (order-processed ?d))
+    :effect (and (not (processing-order ?d)) (not (processing-any-order)) (order-processed ?d))
 )
 
 (:action throw-tool

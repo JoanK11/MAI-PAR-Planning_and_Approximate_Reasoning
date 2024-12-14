@@ -24,64 +24,62 @@ Cueing down from goal distance:   73 into depth [1]
                               	65        	[1][2][3][4][5][6]
                               	64        	[1][2][3][4][5]
                               	63        	[1][2]
-                              	62        	[1][2][3][4][5][6][7][8]
-                              	61        	[1]
-                              	60        	[1]
+                              	62        	[1][2][3][4][5][6][7][8][9][10][11]
+                              	61        	[1][2][3]
+                              	60        	[1][2][3][4][5][6][7][8][9][10]
                               	59        	[1]
-                              	58        	[1][2][3][4]
+                              	58        	[1][2]
                               	57        	[1]
-                              	56        	[1][2][3][4][5]
+                              	56        	[1][2][3][4][5][6][7][8][9][10][11]
                               	55        	[1]
-                              	54        	[1][2][3][4][5]
+                              	54        	[1][2]
                               	53        	[1]
-                              	52        	[1][2][3][4][5]
-                              	51        	[1][2][3][4][5][6][7]
-                              	50        	[1][2][3][4]
-                              	49        	[1]
-                              	48        	[1][2]
-                              	47        	[1]
-                              	46        	[1][2][3][4]
-                              	45        	[1]
-                              	44        	[1][2]
+                              	52        	[1][2][3][4][5][6][7][8][9][10][11][12][13]
+                              	51        	[1][2][3][4]
+                              	50        	[1][2][3][4][5][6][7][8]
+                              	49        	[1][2][3]
+                              	48        	[1]
+                              	47        	[1][2][3][4][5]
+                              	46        	[1][2]
+                              	44        	[1]
                               	43        	[1]
                               	42        	[1]
-                              	41        	[1][2][3]
-                              	40        	[1]
-                              	39        	[1][2][3][4][5]
-                              	38        	[1][2]
-                              	37        	[1]
-                              	36        	[1][2][3][4][5][6][7][8]
-                              	35        	[1][2][3][4]
-                              	34        	[1][2][3][4][5][6][7]
+                              	41        	[1][2][3][4][5][6][7][8][9][10][11]
+                              	40        	[1][2][3][4][5][6][7][8]
+                              	39        	[1][2][3][4]
+                              	38        	[1]
+                              	37        	[1][2]
+                              	36        	[1]
+                              	35        	[1]
+                              	34        	[1][2][3]
                               	33        	[1]
-                              	32        	[1][2][3]
-                              	31        	[1]
-                              	30        	[1][2][3][4][5]
-                              	29        	[1][2]
-                              	28        	[1]
-                              	27        	[1][2][3][4][5][6][7]
-                              	26        	[1][2][3]
+                              	32        	[1][2][3][4][5]
+                              	31        	[1][2]
+                              	30        	[1]
+                              	29        	[1][2][3][4][5][6][7][8][9]
+                              	28        	[1][2]
+                              	27        	[1][2][3]
+                              	26        	[1][2]
                               	25        	[1]
-                              	24        	[1][2][3][4][5][6][7]
-                              	23        	[1][2]
-                              	22        	[1][2][3]
-                              	21        	[1]
+                              	24        	[1][2][3][4][5]
+                              	23        	[1][2][3][4]
+                              	22        	[1]
+                              	21        	[1][2][3][4][5]
                               	20        	[1]
-                              	19        	[1]
-                              	18        	[1][2][3][4][5][6][7][8][9][10][11]
-                              	17        	[1]
-                              	16        	[1][2]
+                              	19        	[1][2][3][4][5][6][7][8]
+                              	18        	[1][2]
+                              	17        	[1][2][3]
+                              	16        	[1]
                               	15        	[1]
                               	14        	[1][2][3][4][5][6][7][8][9]
-                              	13        	[1][2]
-                              	12        	[1]
-                              	11        	[1]
-                              	10        	[1]
-                               	9        	[1][2][3][4]
+                              	13        	[1]
+                              	12        	[1][2]
+                              	10        	[1][2][3][4][5][6][7][8]
+                               	9        	[1][2]
                                	8        	[1]
                                	7        	[1]
                                	6        	[1]
-                               	5        	[1]
+                               	5        	[1][2][3][4]
                                	4        	[1]
                                	3        	[1]
                                	2        	[1]
@@ -136,178 +134,213 @@ step	0: START-ORDER CURRY_RICE
    	43: MOVE MIXA PA
    	44: DROP-ITEM BROTH PA
    	45: MOVE PA MIXA
-   	46: MOVE MIXA CTA
-   	47: PICK-UP-ITEM KNIFE2 CTA
-   	48: CUT-INGREDIENT VEGETABLES KNIFE2 CTA
-   	49: CUT-INGREDIENT FISH KNIFE2 CTA
-   	50: CUT-INGREDIENT SEAWEED KNIFE2 CTA
-   	51: CUT-INGREDIENT CHICKEN KNIFE2 CTA
-   	52: CHECK-PREPARED VEGETABLES RAMEN
-   	53: CHECK-PREPARED FISH SUSHI
-   	54: CHECK-PREPARED SEAWEED SUSHI
-   	55: DROP-ITEM KNIFE2 CTA
-   	56: PICK-UP-ITEM VEGETABLES CTA
-   	57: MOVE CTA MIXA
-   	58: MOVE MIXA PA
-   	59: DROP-ITEM VEGETABLES PA
-   	60: MOVE PA MIXA
-   	61: MOVE MIXA CTA
-   	62: PICK-UP-ITEM FISH CTA
-   	63: MOVE CTA MIXA
-   	64: MOVE MIXA PA
-   	65: DROP-ITEM FISH PA
-   	66: MOVE PA MIXA
-   	67: MOVE MIXA CTA
-   	68: PICK-UP-ITEM SEAWEED CTA
-   	69: MOVE CTA MIXA
-   	70: MOVE MIXA PA
-   	71: DROP-ITEM SEAWEED PA
-   	72: MOVE PA MIXA
-   	73: MOVE MIXA CTA
-   	74: PICK-UP-ITEM CHICKEN CTA
-   	75: MOVE CTA MIXA
-   	76: MOVE MIXA PA
-   	77: MOVE PA CA
-   	78: DROP-ITEM CHICKEN CA
-   	79: COOK-INGREDIENT CHICKEN POT2 CA
-   	80: PICK-UP-ITEM CHICKEN CA
-   	81: CHECK-PREPARED CHICKEN CURRY_RICE
-   	82: MOVE CA PA
-   	83: DROP-ITEM CHICKEN PA
-   	84: PICK-UP-ITEM NOODLES PA
-   	85: MOVE PA CA
-   	86: DROP-ITEM NOODLES CA
-   	87: COOK-INGREDIENT NOODLES POT2 CA
-   	88: CHECK-PREPARED NOODLES RAMEN
-   	89: PICK-UP-ITEM NOODLES CA
-   	90: MOVE CA PA
-   	91: DROP-ITEM NOODLES PA
-   	92: PICK-UP-ITEM BROTH PA
-   	93: MOVE PA CA
-   	94: DROP-ITEM BROTH CA
-   	95: COOK-INGREDIENT BROTH POT2 CA
-   	96: CHECK-PREPARED BROTH RAMEN
-   	97: PICK-UP-ITEM BROTH CA
-   	98: MOVE CA PA
-   	99: DROP-ITEM BROTH PA
-  	100: ASSEMBLE-DISH RAMEN PA
-  	101: PICK-UP-ITEM RAMEN PA
-  	102: MOVE PA CA
-  	103: MOVE CA SVA
-  	104: SERVE-DISH RAMEN SVA
-  	105: MOVE SVA CA
-  	106: PICK-UP-ITEM POT2 CA
-  	107: MOVE CA DWA
-  	108: DROP-ITEM POT2 DWA
-  	109: CLEAN-TOOL POT2 DWA
-  	110: PICK-UP-ITEM POT2 DWA
-  	111: MOVE DWA CA
-  	112: DROP-ITEM POT2 CA
-  	113: MOVE CA PA
-  	114: MOVE PA MIXA
-  	115: PICK-UP-ITEM GLOVES MIXA
-  	116: MIX-INGREDIENT RICE2 GLOVES MIXA
-  	117: MIX-INGREDIENT RICE1 GLOVES MIXA
-  	118: DROP-ITEM GLOVES MIXA
-  	119: PICK-UP-ITEM RICE2 MIXA
-  	120: MOVE MIXA PA
-  	121: DROP-ITEM RICE2 PA
-  	122: MOVE PA MIXA
-  	123: PICK-UP-ITEM RICE1 MIXA
-  	124: MOVE MIXA PA
-  	125: MOVE PA CA
-  	126: DROP-ITEM RICE1 CA
-  	127: COOK-INGREDIENT RICE1 POT2 CA
-  	128: PICK-UP-ITEM RICE1 CA
-  	129: CHECK-PREPARED RICE1 SUSHI
-  	130: MOVE CA PA
-  	131: DROP-ITEM RICE1 PA
-  	132: ASSEMBLE-DISH SUSHI PA
-  	133: PICK-UP-ITEM SUSHI PA
-  	134: MOVE PA CA
-  	135: MOVE CA SVA
-  	136: SERVE-DISH SUSHI SVA
-  	137: MOVE SVA CA
-  	138: PICK-UP-ITEM POT2 CA
-  	139: MOVE CA DWA
-  	140: DROP-ITEM POT2 DWA
-  	141: CLEAN-TOOL POT2 DWA
-  	142: PICK-UP-ITEM POT2 DWA
-  	143: MOVE DWA CA
-  	144: DROP-ITEM POT2 CA
-  	145: MOVE CA PA
-  	146: MOVE PA MIXA
-  	147: PICK-UP-ITEM GLOVES MIXA
-  	148: MOVE MIXA PA
-  	149: MOVE PA DWA
-  	150: DROP-ITEM GLOVES DWA
-  	151: CLEAN-TOOL GLOVES DWA
-  	152: PICK-UP-ITEM GLOVES DWA
-  	153: MOVE DWA PA
-  	154: MOVE PA MIXA
-  	155: DROP-ITEM GLOVES MIXA
-  	156: MOVE MIXA CTA
-  	157: PICK-UP-ITEM KNIFE2 CTA
-  	158: MOVE CTA MIXA
-  	159: MOVE MIXA PA
-  	160: MOVE PA DWA
-  	161: DROP-ITEM KNIFE2 DWA
-  	162: CLEAN-TOOL KNIFE2 DWA
-  	163: PICK-UP-ITEM KNIFE2 DWA
+   	46: PICK-UP-ITEM GLOVES MIXA
+   	47: MIX-INGREDIENT RICE2 GLOVES CURRY_RICE MIXA
+   	48: MOVE MIXA PA
+   	49: MOVE PA DWA
+   	50: DROP-ITEM GLOVES DWA
+   	51: CLEAN-TOOL GLOVES DWA
+   	52: PICK-UP-ITEM GLOVES DWA
+   	53: MOVE DWA PA
+   	54: MOVE PA MIXA
+   	55: DROP-ITEM GLOVES MIXA
+   	56: PICK-UP-ITEM RICE2 MIXA
+   	57: MOVE MIXA PA
+   	58: MOVE PA CA
+   	59: DROP-ITEM RICE2 CA
+   	60: COOK-INGREDIENT RICE2 POT CURRY_RICE CA
+   	61: PICK-UP-ITEM POT CA
+   	62: MOVE CA DWA
+   	63: DROP-ITEM POT DWA
+   	64: CHECK-PREPARED RICE2 CURRY_RICE
+   	65: CLEAN-TOOL POT DWA
+   	66: PICK-UP-ITEM POT DWA
+   	67: MOVE DWA CA
+   	68: DROP-ITEM POT CA
+   	69: PICK-UP-ITEM RICE2 CA
+   	70: MOVE CA PA
+   	71: DROP-ITEM RICE2 PA
+   	72: PICK-UP-ITEM CURRY PA
+   	73: MOVE PA CA
+   	74: DROP-ITEM CURRY CA
+   	75: COOK-INGREDIENT CURRY POT CURRY_RICE CA
+   	76: PICK-UP-ITEM POT CA
+   	77: MOVE CA DWA
+   	78: DROP-ITEM POT DWA
+   	79: CHECK-PREPARED CURRY CURRY_RICE
+   	80: CLEAN-TOOL POT DWA
+   	81: PICK-UP-ITEM POT DWA
+   	82: MOVE DWA CA
+   	83: DROP-ITEM POT CA
+   	84: PICK-UP-ITEM CURRY CA
+   	85: MOVE CA PA
+   	86: DROP-ITEM CURRY PA
+   	87: MOVE PA MIXA
+   	88: MOVE MIXA CTA
+   	89: PICK-UP-ITEM KNIFE CTA
+   	90: CUT-INGREDIENT CHICKEN KNIFE CURRY_RICE CTA
+   	91: MOVE CTA MIXA
+   	92: MOVE MIXA PA
+   	93: MOVE PA DWA
+   	94: DROP-ITEM KNIFE DWA
+   	95: CLEAN-TOOL KNIFE DWA
+   	96: PICK-UP-ITEM KNIFE DWA
+   	97: MOVE DWA PA
+   	98: MOVE PA MIXA
+   	99: MOVE MIXA CTA
+  	100: DROP-ITEM KNIFE CTA
+  	101: PICK-UP-ITEM CHICKEN CTA
+  	102: MOVE CTA MIXA
+  	103: MOVE MIXA PA
+  	104: MOVE PA CA
+  	105: DROP-ITEM CHICKEN CA
+  	106: COOK-INGREDIENT CHICKEN POT CURRY_RICE CA
+  	107: PICK-UP-ITEM CHICKEN CA
+  	108: CHECK-PREPARED CHICKEN CURRY_RICE
+  	109: MOVE CA PA
+  	110: DROP-ITEM CHICKEN PA
+  	111: ASSEMBLE-DISH CURRY_RICE PA
+  	112: PICK-UP-ITEM CURRY_RICE PA
+  	113: MOVE PA CA
+  	114: MOVE CA SVA
+  	115: SERVE-DISH CURRY_RICE SVA
+  	116: MOVE SVA CA
+  	117: PICK-UP-ITEM POT CA
+  	118: MOVE CA DWA
+  	119: DROP-ITEM POT DWA
+  	120: CLEAN-TOOL POT DWA
+  	121: PICK-UP-ITEM POT DWA
+  	122: MOVE DWA CA
+  	123: DROP-ITEM POT CA
+  	124: END-ORDER CURRY_RICE
+  	125: START-ORDER RAMEN
+  	126: MOVE CA PA
+  	127: MOVE PA MIXA
+  	128: MOVE MIXA CTA
+  	129: PICK-UP-ITEM KNIFE CTA
+  	130: CUT-INGREDIENT VEGETABLES KNIFE RAMEN CTA
+  	131: CHECK-PREPARED VEGETABLES RAMEN
+  	132: DROP-ITEM KNIFE CTA
+  	133: PICK-UP-ITEM VEGETABLES CTA
+  	134: MOVE CTA MIXA
+  	135: MOVE MIXA PA
+  	136: DROP-ITEM VEGETABLES PA
+  	137: PICK-UP-ITEM NOODLES PA
+  	138: MOVE PA CA
+  	139: DROP-ITEM NOODLES CA
+  	140: COOK-INGREDIENT NOODLES POT RAMEN CA
+  	141: PICK-UP-ITEM NOODLES CA
+  	142: CHECK-PREPARED NOODLES RAMEN
+  	143: MOVE CA PA
+  	144: DROP-ITEM NOODLES PA
+  	145: PICK-UP-ITEM BROTH PA
+  	146: MOVE PA CA
+  	147: DROP-ITEM BROTH CA
+  	148: COOK-INGREDIENT BROTH POT RAMEN CA
+  	149: CHECK-PREPARED BROTH RAMEN
+  	150: PICK-UP-ITEM BROTH CA
+  	151: MOVE CA PA
+  	152: DROP-ITEM BROTH PA
+  	153: ASSEMBLE-DISH RAMEN PA
+  	154: PICK-UP-ITEM RAMEN PA
+  	155: MOVE PA CA
+  	156: MOVE CA SVA
+  	157: SERVE-DISH RAMEN SVA
+  	158: MOVE SVA CA
+  	159: PICK-UP-ITEM POT CA
+  	160: MOVE CA DWA
+  	161: DROP-ITEM POT DWA
+  	162: CLEAN-TOOL POT DWA
+  	163: PICK-UP-ITEM POT DWA
   	164: MOVE DWA CA
-  	165: MOVE CA PA
-  	166: MOVE PA MIXA
-  	167: MOVE MIXA CTA
-  	168: DROP-ITEM KNIFE2 CTA
-  	169: MOVE CTA MIXA
-  	170: MOVE MIXA PA
-  	171: PICK-UP-ITEM RICE2 PA
-  	172: MOVE PA CA
-  	173: DROP-ITEM RICE2 CA
-  	174: COOK-INGREDIENT RICE2 POT2 CA
-  	175: PICK-UP-ITEM POT2 CA
-  	176: MOVE CA DWA
-  	177: DROP-ITEM POT2 DWA
-  	178: CHECK-PREPARED RICE2 CURRY_RICE
-  	179: CLEAN-TOOL POT2 DWA
-  	180: PICK-UP-ITEM POT2 DWA
-  	181: MOVE DWA CA
-  	182: DROP-ITEM POT2 CA
-  	183: PICK-UP-ITEM RICE2 CA
-  	184: MOVE CA PA
-  	185: DROP-ITEM RICE2 PA
-  	186: PICK-UP-ITEM CURRY PA
-  	187: MOVE PA CA
-  	188: DROP-ITEM CURRY CA
-  	189: COOK-INGREDIENT CURRY POT2 CA
-  	190: PICK-UP-ITEM CURRY CA
-  	191: CHECK-PREPARED CURRY CURRY_RICE
-  	192: MOVE CA PA
-  	193: DROP-ITEM CURRY PA
-  	194: ASSEMBLE-DISH CURRY_RICE PA
-  	195: PICK-UP-ITEM CURRY_RICE PA
-  	196: MOVE PA CA
-  	197: MOVE CA SVA
-  	198: SERVE-DISH CURRY_RICE SVA
-  	199: MOVE SVA CA
-  	200: PICK-UP-ITEM POT2 CA
-  	201: MOVE CA DWA
-  	202: DROP-ITEM POT2 DWA
-  	203: CLEAN-TOOL POT2 DWA
-  	204: PICK-UP-ITEM POT2 DWA
-  	205: MOVE DWA CA
-  	206: DROP-ITEM POT2 CA
-  	207: END-ORDER CURRY_RICE
-  	208: START-ORDER RAMEN
-  	209: END-ORDER RAMEN
-  	210: START-ORDER SUSHI
-  	211: END-ORDER SUSHI
+  	165: DROP-ITEM POT CA
+  	166: MOVE CA PA
+  	167: MOVE PA MIXA
+  	168: MOVE MIXA CTA
+  	169: PICK-UP-ITEM KNIFE CTA
+  	170: MOVE CTA MIXA
+  	171: MOVE MIXA PA
+  	172: MOVE PA DWA
+  	173: DROP-ITEM KNIFE DWA
+  	174: CLEAN-TOOL KNIFE DWA
+  	175: PICK-UP-ITEM KNIFE DWA
+  	176: MOVE DWA CA
+  	177: MOVE CA PA
+  	178: MOVE PA MIXA
+  	179: MOVE MIXA CTA
+  	180: DROP-ITEM KNIFE CTA
+  	181: END-ORDER RAMEN
+  	182: START-ORDER SUSHI
+  	183: PICK-UP-ITEM KNIFE CTA
+  	184: CUT-INGREDIENT FISH KNIFE SUSHI CTA
+  	185: CUT-INGREDIENT SEAWEED KNIFE SUSHI CTA
+  	186: CHECK-PREPARED FISH SUSHI
+  	187: CHECK-PREPARED SEAWEED SUSHI
+  	188: DROP-ITEM KNIFE CTA
+  	189: PICK-UP-ITEM FISH CTA
+  	190: MOVE CTA MIXA
+  	191: MOVE MIXA PA
+  	192: DROP-ITEM FISH PA
+  	193: MOVE PA MIXA
+  	194: MOVE MIXA CTA
+  	195: PICK-UP-ITEM SEAWEED CTA
+  	196: MOVE CTA MIXA
+  	197: MOVE MIXA PA
+  	198: DROP-ITEM SEAWEED PA
+  	199: MOVE PA MIXA
+  	200: MOVE MIXA CTA
+  	201: PICK-UP-ITEM KNIFE CTA
+  	202: MOVE CTA MIXA
+  	203: MOVE MIXA PA
+  	204: MOVE PA DWA
+  	205: DROP-ITEM KNIFE DWA
+  	206: CLEAN-TOOL KNIFE DWA
+  	207: PICK-UP-ITEM KNIFE DWA
+  	208: MOVE DWA CA
+  	209: MOVE CA PA
+  	210: MOVE PA MIXA
+  	211: MOVE MIXA CTA
+  	212: DROP-ITEM KNIFE CTA
+  	213: MOVE CTA MIXA
+  	214: PICK-UP-ITEM GLOVES MIXA
+  	215: MIX-INGREDIENT RICE1 GLOVES SUSHI MIXA
+  	216: MOVE MIXA PA
+  	217: MOVE PA DWA
+  	218: DROP-ITEM GLOVES DWA
+  	219: CLEAN-TOOL GLOVES DWA
+  	220: PICK-UP-ITEM GLOVES DWA
+  	221: MOVE DWA PA
+  	222: MOVE PA MIXA
+  	223: DROP-ITEM GLOVES MIXA
+  	224: PICK-UP-ITEM RICE1 MIXA
+  	225: MOVE MIXA PA
+  	226: MOVE PA CA
+  	227: DROP-ITEM RICE1 CA
+  	228: COOK-INGREDIENT RICE1 POT SUSHI CA
+  	229: PICK-UP-ITEM RICE1 CA
+  	230: CHECK-PREPARED RICE1 SUSHI
+  	231: MOVE CA PA
+  	232: DROP-ITEM RICE1 PA
+  	233: ASSEMBLE-DISH SUSHI PA
+  	234: PICK-UP-ITEM SUSHI PA
+  	235: MOVE PA CA
+  	236: MOVE CA SVA
+  	237: SERVE-DISH SUSHI SVA
+  	238: MOVE SVA CA
+  	239: PICK-UP-ITEM POT CA
+  	240: MOVE CA DWA
+  	241: DROP-ITEM POT DWA
+  	242: CLEAN-TOOL POT DWA
+  	243: PICK-UP-ITEM POT DWA
+  	244: MOVE DWA CA
+  	245: DROP-ITEM POT CA
+  	246: END-ORDER SUSHI
 	 
 
-time spent:	0.01 seconds instantiating 370 easy, 27 hard action templates
-           	0.00 seconds reachability analysis, yielding 257 facts and 359 actions
-           	0.00 seconds creating final representation with 233 relevant facts, 0 relevant fluents
+time spent:	0.00 seconds instantiating 307 easy, 27 hard action templates
+           	0.00 seconds reachability analysis, yielding 239 facts and 319 actions
+           	0.00 seconds creating final representation with 215 relevant facts, 0 relevant fluents
            	0.00 seconds computing LNF
            	0.00 seconds building connectivity graph
-           	0.79 seconds searching, evaluating 9262 states, to a max depth of 11
-           	0.80 seconds total time
+           	2.68 seconds searching, evaluating 68155 states, to a max depth of 13
+           	2.68 seconds total time

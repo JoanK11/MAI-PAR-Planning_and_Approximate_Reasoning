@@ -72,20 +72,20 @@
 )
 
 (:action cut-ingredient
-    :parameters (?i - Ingredient ?t - Cutter ?l - CTA)
-    :precondition (and (robot-at ?l) (holding ?t) (item-at ?i ?l) (needs-cutting ?i))
+    :parameters (?i - Ingredient ?t - Cutter ?d - Dish ?l - CTA)
+    :precondition (and (robot-at ?l) (holding ?t) (item-at ?i ?l) (needs-cutting ?i) (processing-order ?d) (ingredient-in-dish ?d ?i))
     :effect (and (ingredient-cut ?i) (not (needs-cutting ?i)) (not (tool-clean ?t)))
 )
 
 (:action mix-ingredient
-    :parameters (?i - Ingredient ?t - Mixer ?l - MIXA)
-    :precondition (and (robot-at ?l) (holding ?t) (item-at ?i ?l) (needs-mixing ?i))
+    :parameters (?i - Ingredient ?t - Mixer ?d - Dish ?l - MIXA)
+    :precondition (and (robot-at ?l) (holding ?t) (item-at ?i ?l) (needs-mixing ?i) (processing-order ?d) (ingredient-in-dish ?d ?i))
     :effect (and (ingredient-mixed ?i) (not (needs-mixing ?i)) (not (tool-clean ?t)))
 )
 
 (:action cook-ingredient
-    :parameters (?i - Ingredient ?t - Cooker ?l - CA)
-    :precondition (and (robot-at ?l) (not (holding-any)) (item-at ?i ?l) (item-at ?t ?l) (needs-cooking ?i))
+    :parameters (?i - Ingredient ?t - Cooker ?d - Dish ?l - CA)
+    :precondition (and (robot-at ?l) (not (holding-any)) (item-at ?i ?l) (item-at ?t ?l) (needs-cooking ?i) (processing-order ?d) (ingredient-in-dish ?d ?i))
     :effect (and (ingredient-cooked ?i) (not (needs-cooking ?i)) (not (tool-clean ?t)))
 )
 
